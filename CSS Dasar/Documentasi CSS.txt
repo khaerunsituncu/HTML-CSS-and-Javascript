@@ -1,0 +1,94 @@
+# Font Styling
+# Font-family, mengatur jenis font. terbagi menjadi dua nama font dan generic font, generic font adalah serif atau sans-serif.
+    font-family : nama font, nama font, generic font;
+    font-family : arial, verdana, sans-serif;
+    font-family : "Times New Roman", serif;
+# Font-size, mengatur ukuran font.
+    font-size : <nilai><satuan>;
+        Satuan px, %, dan em.
+# Font-weight, mengatur ketebalan font.
+    font-weight : <value>;
+        lighter, normal, 100-900, bold, bolder.
+# Font-variant, mengatur font menjadi small caps
+    font-variant : <value>;
+        normal, small-caps.
+# Font-style, mengatur font menjadi bercetak miring.
+    font-style : <value>;
+        normal, italic, oblique.
+# Line-height, mengatur spasi antar baris.
+    line-height : <nilai><satuan>;
+        normal, px, em.
+# Shorthand properti font
+    font: font-style[optional] font-variant[optional] font-weight[optional] font-size[wajib]/line-height[optinal] font-family[wajib];
+    font : italic normal bold 16px/18px helvetica,arial, sans-serif;
+    
+# Text Styling
+# Color, memberikan warna pada tulisan.
+color: <value>;
+    nama-warna : red, lightseagreen, royalblue, ...
+    hexadecimal : #ff0000, #20b2aa, #4169e1, ...
+    rgb : rgb(255,0,0), rgb(32,123,456), rgb(100,100,100), ...
+# Text-align, mengatur format paragraf/teks.
+text-align: <value>;
+    left,right,center,justify.
+# Text-indent, memberikan indentasi pada paragraf/teks atau bisa dikatakan ukuran paragraf baru.
+text-indent: <nilai><satuan>;
+    px, %.
+# Text-decoration, mengatur dekorasi pada teks.
+text-decoration: <value>;
+    none, underline(garis bawah), overline(garis atas),line-through(mencoret).
+# Text-transform, mengubah jenis huruf menjadi huruf besar, kecil atau kapital.
+text-transform: <value>;
+    none,lowercase,uppercase,capitalize.
+# Letter-spacing, mengatur spasi antar huruf.
+letter-spacing: <nilai><satuan>;
+    normal,px.
+# Word-spacing, mengatur spasi antar kata.
+word-spacing: <nilai><satuan>;
+    normal,px.
+    
+# Background
+# Background-color, mengatur warna pada background.
+background-color: nama-warna/hexadecimal/rgb;
+# Background-image, mengatur gambar yang akan digunakan pada background. subtlepatterns.com
+background-image: url(alamat_gambar/namagambar.format);
+# Background-repeat, mengatur jenis pengulangan gambar pada background.
+background-repeat: <value>;
+    repeat-x,no-repeat,
+# Background-position, mengatur posisi gambar pada background.
+background-position: sumbu y sumbu x;
+    (sumbu y)top/center/bottom (sumbu x)left/center/right
+# Shorthand Background
+background: color url() position repeat; // urutannya bisa di tukar
+background: lightgreen url(bg.png) top left no-repeat;
+
+# pseudo class
+# pseudo yang berhubungan dengan link
+#cth:
+.hello:link{}
+    :link, style default pada sebuah link (a yang memiliki href).
+    :hover, styl ketika kursor mouse berada diatas sebuah link/elemen.
+    :active, style ketika sebuah link di-klik (keadaan aktif).
+    :visited, style ketika sebuah link sudah pernah dikunjungi sebelumnya.
+# pseudo yang berhubungan dengan posisi elemen (1)
+#cth:
+li:first-child a {color:green;}
+    :fisht-child, memilih elemen pertama dari sebuah parent(elemen pembungkusnya).
+    :last-child, memilih elemen terakhir dari sebuah parent(elemen pembungkusnya).
+    :nth-child(n), memilih elemen ke-n dari sebuah parent. n bisa berarti urutan (1),(2),... atau pola (2n),(3n+2), (4n-1) atau ganjil dan genap (even) & (odd)
+# pseudo yang berhubungan dengan posisi elemen (2)
+    :first-of-type, memilih elemen pertama dari sebuah jenis/tipe tag.
+    :last-of-type, memilih elemen terakhir dari sebuah jenis/tipe tag.
+    
+# Inheritace (pewarisan)
+# Bila ada yang tidak mengikuti parent-nya maka gunakan inherit 
+#cth
+color:inherit;
+
+# Specificity
+inline id(100) class(10) element(1)
+#p1 = 0 1 0 0
+p   = 0 0 0 1
+ul#sarapan li = 0102
+.favorit = 0010
+# ada calculator Specificity
