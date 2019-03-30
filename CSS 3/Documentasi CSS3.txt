@@ -1,0 +1,144 @@
+#Documentasi CSS3
+
+#border-radius, memberi radius pada kotak. satuannya bisa px atau %
+border-radius: 40px; 
+border-radius atas-kiri atas-kanan bawah-kanan bawah kiri;
+border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;
+
+# Opacity, memberi transparan.
+opacity: <value 0-1>;
+    opacity: 0.5;
+    
+# rgba(), memberikan transparan juga
+background-color : rgba(255,102,0,0.5);
+background-color : hsla(24,100%,68%,0.5);
+
+# box-shadow
+box-shadow: <x-offset> <y-offset> <blur> <color>;
+box-shadow: 5px 5px 5px rgba(0,0,0,0.75);
+box-shadow: <x-offset> <y-offset> <blur> <spread(opsinal)> <color>;
+box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.75);
+box-shadow: <inset(opsinal)> <x-offset> <y-offset> <blur> <spread(opsinal)> <color>;
+box-shadow: inset 5px 5px 5px 5px rgba(0,0,0,0.75);
+
+    x-offset
+        mengatur jarak bayangan pada sumbu horizontal, nilai plus ke kanan nilai negatif ke kiri
+    y-offset
+        mengatur jarak bayangan pada sumbu vertical, nilai plus ke kebawah nilai negatif ke kekanan
+    blur
+        jumlah blur, nilainya tidak bisa negatif
+    color
+        warna shadow
+    inset
+        bayangan ada di dalam kotak
+    spread
+        ukuran shadow
+# box-shadow multiple shadow
+box-shadow: 5px 5px 5px rgba(255,0,0,.5), -5px -5px 5px rgba(0,0,255,.5)
+
+# text-shadow, bisa juga multiple
+text-shadow: <x-offset> <y-offsite> <blur> <color>;
+text-shadow: 5px 5px 5px green;
+
+#Liner Gradient, bukan properti css3, melainkan value untuk background-image
+background-image : liner-gradient(green,red,...);
+background : liner-gradient(green,red,...);
+background: linear-gradient(<sudut> | <arah>, <warna awal>, <warna akhir>);
+    sudut, menggunakan derajat dengan satuan deg.
+    arah, to bottom, to top, to left, to right, to left top, top left bottom, to right top, to right bottom.
+background : liner-gradient(90deg,green,red,...);
+background : liner-gradient(to left,green,red,...);
+#color stop, bobot gradient color
+background : liner-gradient(to left,green 60%,red 80%);
+
+# Radial Gradient
+background-image : radial-gradient(<warna awal>,<warna kedua>,...);
+    warna awal, pusat
+background : radial-gradient(blue 10%, green 60%,red 80%);
+liner-gradient(
+    <tipe> <jangkauan> at <posisi-y> <posisi-x<>,
+    <warna-1>,
+    <warna-2>,
+    ....,
+    <warna-n>
+);
+    tipe, ellipse dan circle
+    jangkauan, jarak dari pusat gradient ke sisi terluarnya,
+        closest-corner, jarak dari pusat gradient ke sudut terdekat elemen
+        closest-side, jarak dari pusat gradient ke sisi terdekat elemen
+        farthest-corner, jarak dari pusat gradient ke sudut terjauh elemen
+        farthest-side, jarak dari pusat gradient ke sisi terjauh elemen 
+    posisi-y, top center bottom, px 
+    posisi-x, left center right, px
+
+# @font-face, membuat font sendiri
+# sintaks lengkap
+@font-face {
+    font-family:'namafontbaru';
+    src: ulr('lokasi/file/fontbaru.eot');
+    src: url('lokasi/file/fontbaru.eot?#iefix') format('embedded-opentype'),
+         url('lokasi/file/fontbaru.woff2') format('woff2'),
+         url('lokasi/file/fontbaru.woff') format('woff'),
+         url('lokasi/file/fontbaru.ttf') format('truetype'),
+         url('lokasi/file/fontbaru.svg#svgFontName') format('svg');
+};
+
+# vendor prefixed, agar css3 kompitibel ke semua browser
+-webkit-<properti css3>, (chrome,safari,opera versi terbaru)
+-moz-<properti css3>, (firefox)
+-ms-<properti css3>, (internet explorer)
+-o-<properti css3>, (opera versi terdahulu)
+shouldprefix.com / caniuse.com / pleeease.io/play
+
+# filter, memberikan effek visual pada gambar, bg, border
+filter:<tipe-filter>;
+    blur(px)
+    brightness(angka | %)
+    contrast(angka | %)
+    saturate(angka | %)
+    grayscale(angka | %)
+    sepia(angka | %)
+    hue-rotate(deg)
+    invert(angka | %)
+    opacity(angka | %)
+    drop-shadow(sama seperti box-shadow)
+# menggunakan multi filter
+filter:<tipe-filter> <tipe-filter>;
+
+# Transform, memanipulasi format visual, 2D & 3D
+transform: <fungsi>;
+    scale, memperbesar/memperkecil
+        scale(angka), scaleX(angka), scaleY(angka)
+    rotate, memutar
+        rotate(deg), rotateX(deg), rotateY(deg)
+    skew, membuat condong/miring
+        skew(deg), skewX(deg), skewY(deg)
+    translate, mengubah posisi
+        translate(px), translateX(px), translateY(px)
+# bisa multi fungsi
+
+# transition, ada keadaan awal dan akhir    
+transition: <property> <durasi-wajib s/ms> <fungsi> <delay>;
+    durasi, satuannya s/ms
+    properti(memilih properti yang menggunakan transition), all | nama-propert | none
+    fungsi, timing function. ease | ease-in | ease-out | ease-in-out | linear | cubic-bezier(w,x,y,z)
+    delay, satuannya s/ms
+    
+# animation
+@keyframes [name] {
+    from {
+        [property-css]
+    }
+    to {
+        [property-css]
+    }
+}
+# from dan to nya bisa di ganti persen contoh 0% 50% 100% dll
+
+animation : [name-wajib] [duration] [timing-function] [delay] [iteration-count] [direction] [fill-mode] [play-state]
+    direction : normal, reverse, alternate, alternate-reverse
+    fill-mode : none | forwards | backwards | both
+    play-states: running | paused

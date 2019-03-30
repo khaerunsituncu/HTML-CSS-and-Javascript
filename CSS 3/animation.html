@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CSS Animation</title>
+	<style>
+		.kotak {
+			width: 200px;
+			height: 200px;
+			background-color: salmon;
+			/*transition: 2s ease all;*/
+			animation: animasikotak 3s ease infinite alternate forwards;
+			/*animation-name: animasikotak;
+			animation-duration: 2s;
+			animation-timing-function: ease;
+			animation-iteration-count: infinite;*/
+
+
+		}
+		.kotak:hover {
+		}
+
+		@keyframes animasikotak {
+			0% {
+				width: 200px;
+			}
+			50% {
+				width: 500px;
+				height: 200px;
+			}
+			100% {
+				width: 500px;
+				height: 500px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="kotak"></div>
+</body>
+</html>
