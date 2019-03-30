@@ -1,0 +1,32 @@
+# Table HTML
+# baris-table row (tr), kolom-table data (td), table header (th), thead, tbody
+
+<table border="1" cellspacing="0" cellpadding="5" >
+<tr>
+<td>baris 1 kolom 1</td>
+<td>baris 1 kolom 2</td>
+</tr>
+<tr>
+<td>baris 2 kolom 1</td>
+<td>baris 2 kolom 2</td>
+</tr>
+</table>
+
+# attribut table
+    border, garis pinggir
+    cellspacing, memberi ruang table border
+    cellpadding, memberi ruang table
+    colspan, menggabungkan kolom 
+    rowspana, menggabungkan baris
+    
+# Form HTML
+<form>elemen form</form>
+    input
+        <input type="">
+            text, password, radio, checkbox, submit, reset, buttom
+    textarea
+    select
+    buttom
+        <buttom type=""></buttom>
+        submit, reset, buttomp
+    label
